@@ -34,9 +34,23 @@ describe("A thermostat", function(){
     expect(thermostat.temperature).toEqual(10);
     });
 
-    it('Has a powersaving mode', function (){
-      
+    it('Has a powersaving mode on by default', function (){
+      let thermostat = new Thermostat();
+
+      expect(thermostat.isPowerSavingModeOn).toEqual(true)
     })
+
+    it('Can change the powersaving mode from on to off', function (){
+      let thermostat = new Thermostat();
+      thermostat.changePowerSavingModeToOff();
+      expect(thermostat.isPowerSavingModeOn).toBe(false)
+    })
+
+        it('Can change the powersaving mode from off to on ', function (){
+          let thermostat = new Thermostat();
+          thermostat.changePowerSavingModeToOn();
+          expect(thermostat.isPowerSavingModeOn).toBe(true)
+        })
 
 
 });
