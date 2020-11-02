@@ -1,6 +1,9 @@
+// use 'strict'
+
 class Thermostat{
   constructor(temperature){
     this.temperature=20
+    this.MINIMUM_TEMPERATURE = 10
   }
 
 
@@ -13,8 +16,13 @@ class Thermostat{
 
 
    decrease () {
+      if (this.isMinimumTemperature ()) {
+        return;
+      }
+      this.temperature-=1
+  }
 
-    this.temperature-=1
-
+  isMinimumTemperature () {
+    return this.MINIMUM_TEMPERATURE === this.temperature;
   }
 }

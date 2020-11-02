@@ -25,7 +25,7 @@ describe("A thermostat", function(){
     });
 
 
-    it('Has a minimum temperature of 10 degress', function () {
+    it('Has a minimum temperature of 10 degrees', function () {
       let thermostat = new Thermostat();
 
       for (var i = 1; i < 11; i++) {
@@ -33,4 +33,10 @@ describe("A thermostat", function(){
       }
     expect(thermostat.temperature).toEqual(10);
     });
+
+    it('Has a powersaving mode', function (){
+      
+    })
+
+
 });
