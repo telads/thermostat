@@ -11,11 +11,11 @@
 }
 
 body {
-  font-family: Tahoma;
   font-size: 18px;
   text-align: center;
   background-color: #9996F7;
   padding: 100px; */
-
-
+  font-family: 'Poppins', sans-serif;}
+  background-image: url("public/image/thermometer.png");
 }
+/* <!-- background-repeat: no-repeat; --> */
