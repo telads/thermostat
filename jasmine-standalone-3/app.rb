@@ -2,7 +2,7 @@ require 'sinatra'
 require 'sinatra/json'
 
 class Thermostat < Sinatra::Base
-  # enable :sessions
+  enable :sessions
 
   get '/' do
     erb :index
@@ -16,5 +16,11 @@ class Thermostat < Sinatra::Base
     temperature = session[:temperature] || 20
     status 200
     json(temperature: temperature)
+  end
+
+  post '/api/thermostat' do
+    data = JSON.parse(request.body.read)
+    session[:temperature] = data['temperature']
+    status 200
   end
 end

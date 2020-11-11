@@ -9,9 +9,17 @@ describe 'api' do
       expect(parsed_body['temperature']).to eq 20
     end
   end
-  # describe 'keeps the temperature' do
-    
-  # end
+
+  describe 'keeps the temperature' do
+    it 'returns a temperature that has previously been stored' do
+      temperature = "18"
+      post '/api/thermostat', { temperature: temperature }.to_json
+      get '/api/thermostat'
+      parsed_body = JSON.parse(last_response.body)
+      expect(last_response).to be_ok
+      expect(parsed_body['temperature']).to eq temperature
+    end
+  end
 
   describe 'post temperature' do
     it 'receives a new temperature and returns 200 status' do
